@@ -1,0 +1,293 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    font-family: 'Playfair Display', serif;
+    background: #f8f6f2;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 600px;
+    width: 100%;
+    padding: 35px;
+    border: 1px solid #eee;
+}
+
+        h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+       .subtitle {
+    text-align: center;
+    color: #999;
+    font-size: 0.85em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+ input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95em;
+    background: #fafafa;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #000;
+    background: #fff;
+}
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #000000;
+        }
+
+        .measurements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+ button {
+    width: 100%;
+    padding: 14px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #333;
+}
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .success-message {
+            background: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+
+        #measurementsSection {
+            display: none;
+        }
+
+        .view-measurements-btn {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            color: #000000;
+            border: 2px solid #2a2a2b;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .view-measurements-btn:hover {
+            background: #000000;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Measurements Page Styles */
+        .measurements-page {
+            display: none;
+        }
+
+        .measurements-page.active {
+            display: block;
+        }
+
+        .order-form-page.hidden {
+            display: none;
+        }
+
+        .back-btn {
+            width: auto;
+            padding: 10px 20px;
+            background: #999;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: #777;
+        }
+
+        .password-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .password-modal.active {
+            display: flex;
+        }
+
+        .password-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-box h3 {
+            color: #000000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .password-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .password-buttons button {
+            flex: 1;
+        }
+
+        .cancel-btn {
+            background: #999;
+        }
+
+        .cancel-btn:hover {
+            background: #777;
+        }
+
+        .error-message {
+            color: #f44336;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+      .order-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+.order-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+        .order-card h3 {
+            color: #000000;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .order-details {
+            font-size: 0.95em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .order-details p {
+            margin-bottom: 8px;
+        }
+
+     .measurement-item {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin: 4px;
+    font-size: 0.85em;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+        .no-orders {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+            font-size: 1.1em;
+        }
+   
