@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">.
+    <div class="container">
         <div class="logo-container">
-    <img src="logo.png" alt="Brand Logo" class="logo">
-</div>
+            <img src="logo.png" alt="Brand Logo" class="logo" onerror="this.style.display='none'">
+        </div>
         <!-- Order Form Page -->
         <div id="orderFormPage" class="order-form-page">
-           <center><h1>Rishva Designer</h1></center> 
+            <center><h1>Rishva Designer</h1></center>
             <p class="subtitle">Custom Clothing Measurements</p>
 
             <form id="orderForm">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="customerPhone">Phone Number *</label>
-                        <input type="tel" id="customerPhone" required>
+                        <input type="tel" id="customerPhone" pattern="[0-9+\-\s]{7,15}" title="Enter a valid phone number (7-15 digits)" required>
                     </div>
                 </div>
 
@@ -35,19 +35,18 @@
                     <div class="form-group">
                         <label for="clothingType">Select Type *</label>
                         <select id="clothingType" required>
-    <option value="">-- Select Clothing Type --</option>
-    <option value="kurti">Kurti</option>
-    <option value="pant">Pant</option>
-    <option value="gown">Gown</option>
-    <option value="lehenga">Lehenga</option>
-    <option value="blouse">Blouse</option>
-    <option value="jacket">Jacket</option>
-    <option value="kaftan">Kaftan</option>
-    <option value="other">Other</option>
-</select>
+                            <option value="">-- Select Clothing Type --</option>
+                            <option value="kurti">Kurti</option>
+                            <option value="pant">Pant</option>
+                            <option value="gown">Gown</option>
+                            <option value="lehenga">Lehenga</option>
+                            <option value="blouse">Blouse</option>
+                            <option value="jacket">Jacket</option>
+                            <option value="kaftan">Kaftan</option>
+                            <option value="other">Other</option>
+                        </select>
 
-<!-- Add this just below select -->
-<input type="text" id="otherTypeInput" placeholder="Enter clothing type" style="display:none; margin-top:10px;">
+                        <input type="text" id="otherTypeInput" placeholder="Enter clothing type" style="display:none; margin-top:10px;">
                     </div>
                 </div>
 
@@ -55,11 +54,13 @@
                     <h2>Body Measurements (in inches)</h2>
                     <div id="measurementsFields"></div>
                 </div>
-<div class="form-group">
-    <label for="notes">Notes (Optional)</label>
-    <textarea id="notes" rows="3" placeholder="Add any special instructions..."></textarea>
-</div>
-                <button type="submit">Save Order</button>
+
+                <div class="form-group">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" rows="3" placeholder="Add any special instructions..."></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn">Save Order</button>
             </form>
 
             <button type="button" class="view-measurements-btn" id="viewMeasurementsBtn">View Measurements</button>
@@ -72,7 +73,7 @@
         <!-- Measurements Page -->
         <div id="measurementsPage" class="measurements-page">
             <button type="button" class="back-btn" id="backBtn">← Back to Form</button>
-            
+
             <h1>Saved Measurements</h1>
             <input type="text" id="searchInput" placeholder="Search by name or phone..." style="margin-bottom:15px;">
             <p class="subtitle">All Customer Orders</p>
@@ -96,7 +97,7 @@
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } 
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, setDoc }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // 🔥 Your Firebase Config
@@ -114,9 +115,9 @@ const db = getFirestore(app);
 
 // make globally available
 window.db = db;
-window.fb = { collection, addDoc, getDocs, deleteDoc, doc };
+window.fb = { collection, addDoc, getDocs, deleteDoc, doc, setDoc };
 </script>
 
-<script type="module" src="script.js"></script>    
+<script type="module" src="script.js"></script>
 </body>
 </html>
