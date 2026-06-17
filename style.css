@@ -1,11 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+body {
     font-family: 'Playfair Display', serif;
     background: #f8f6f2;
     min-height: 100vh;
@@ -24,7 +23,7 @@
     border: 1px solid #eee;
 }
 
-        h1 {
+h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2em;
     font-weight: 600;
@@ -33,7 +32,7 @@
     margin-bottom: 5px;
 }
 
-       .subtitle {
+.subtitle {
     text-align: center;
     color: #999;
     font-size: 0.85em;
@@ -42,30 +41,30 @@
     margin-bottom: 30px;
 }
 
-        .form-section {
-            margin-bottom: 30px;
-        }
+.form-section {
+    margin-bottom: 30px;
+}
 
-        .form-section h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.3em;
-            border-bottom: 2px solid #000000;
-            padding-bottom: 10px;
-        }
+.form-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+.form-group {
+    margin-bottom: 20px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
 
- input, select, textarea {
+input, select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -73,25 +72,26 @@
     font-size: 0.95em;
     background: #fafafa;
     transition: all 0.3s;
+    font-family: inherit;
 }
 
 input:focus, select:focus, textarea:focus {
+    outline: none;
     border-color: #000;
     background: #fff;
 }
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: #000000;
-        }
+input:invalid:not(:placeholder-shown) {
+    border-color: #f44336;
+}
 
-        .measurements-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+.measurements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
 
- button {
+button {
     width: 100%;
     padding: 14px;
     background: #000;
@@ -109,134 +109,139 @@ button:hover {
     background: #333;
 }
 
-        button:active {
-            transform: translateY(0);
-        }
+button:active {
+    transform: translateY(0);
+}
 
-        .success-message {
-            background: #4caf50;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 20px;
-            display: none;
-        }
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
 
-        #measurementsSection {
-            display: none;
-        }
+.success-message {
+    background: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
 
-        .view-measurements-btn {
-            width: 100%;
-            padding: 12px;
-            background: white;
-            color: #000000;
-            border: 2px solid #2a2a2b;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 15px;
-        }
+#measurementsSection {
+    display: none;
+}
 
-        .view-measurements-btn:hover {
-            background: #000000;
-            color: white;
-            transform: translateY(-2px);
-        }
+.view-measurements-btn {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    color: #000000;
+    border: 2px solid #2a2a2b;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
 
-        /* Measurements Page Styles */
-        .measurements-page {
-            display: none;
-        }
+.view-measurements-btn:hover {
+    background: #000000;
+    color: white;
+    transform: translateY(-2px);
+}
 
-        .measurements-page.active {
-            display: block;
-        }
+/* Measurements Page Styles */
+.measurements-page {
+    display: none;
+}
 
-        .order-form-page.hidden {
-            display: none;
-        }
+.measurements-page.active {
+    display: block;
+}
 
-        .back-btn {
-            width: auto;
-            padding: 10px 20px;
-            background: #999;
-            margin-bottom: 20px;
-        }
+.order-form-page.hidden {
+    display: none;
+}
 
-        .back-btn:hover {
-            background: #777;
-        }
+.back-btn {
+    width: auto;
+    padding: 10px 20px;
+    background: #999;
+    margin-bottom: 20px;
+}
 
-        .password-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
+.back-btn:hover {
+    background: #777;
+}
 
-        .password-modal.active {
-            display: flex;
-        }
+.password-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
 
-        .password-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            max-width: 400px;
-            width: 90%;
-        }
+.password-modal.active {
+    display: flex;
+}
 
-        .password-box h3 {
-            color: #000000;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+.password-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+}
 
-        .password-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
+.password-box h3 {
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-        .password-buttons {
-            display: flex;
-            gap: 10px;
-        }
+.password-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
 
-        .password-buttons button {
-            flex: 1;
-        }
+.password-buttons {
+    display: flex;
+    gap: 10px;
+}
 
-        .cancel-btn {
-            background: #999;
-        }
+.password-buttons button {
+    flex: 1;
+}
 
-        .cancel-btn:hover {
-            background: #777;
-        }
+.cancel-btn {
+    background: #999;
+}
 
-        .error-message {
-            color: #f44336;
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
+.cancel-btn:hover {
+    background: #777;
+}
 
-      .order-card {
+.error-message {
+    color: #f44336;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.order-card {
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -244,6 +249,7 @@ button:hover {
     border: 1px solid #eee;
     transition: 0.3s;
 }
+
 .logo-container {
     text-align: center;
     margin-bottom: 20px;
@@ -254,27 +260,28 @@ button:hover {
     height: auto;
     object-fit: contain;
 }
+
 .order-card:hover {
     box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 
-        .order-card h3 {
-            color: #000000;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
+.order-card h3 {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
 
-        .order-details {
-            font-size: 0.95em;
-            color: #333;
-            line-height: 1.6;
-        }
+.order-details {
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.6;
+}
 
-        .order-details p {
-            margin-bottom: 8px;
-        }
+.order-details p {
+    margin-bottom: 8px;
+}
 
-     .measurement-item {
+.measurement-item {
     display: inline-block;
     background: #f1f1f1;
     padding: 6px 10px;
@@ -284,10 +291,28 @@ button:hover {
     color: #333;
     border: 1px solid #e0e0e0;
 }
-        .no-orders {
-            text-align: center;
-            color: #666;
-            padding: 40px;
-            font-size: 1.1em;
-        }
-   
+
+.no-orders {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+    font-size: 1.1em;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card-buttons button {
+    flex: 1;
+}
+
+.delete-btn {
+    background: #c0392b;
+}
+
+.delete-btn:hover {
+    background: #962d22;
+}
