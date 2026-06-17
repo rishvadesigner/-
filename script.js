@@ -16,8 +16,9 @@ const measurements = [
     { name: 'elbow', label: 'Elbow' },
     { name: 'handMori', label: 'Hand Mori' },
     { name: 'dartPoint', label: 'Dart Point' },
-    { name: 'gotch', label: 'Gotch' },
+    { name: 'crotch', label: 'crotch' },
     { name: 'thighRound', label: 'Thigh Round' },
+    { name: 'bottom-length', label: 'bottom-Length' },
     { name: 'kneeRound', label: 'Knee Round' },
     { name: 'calfRound', label: 'Calf Round' },
     { name: 'ankleRound', label: 'Ankle Round' }
